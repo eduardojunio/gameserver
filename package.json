@@ -1,0 +1,26 @@
+{
+  "name": "gameserver",
+  "version": "0.0.1",
+  "description": "Experimental Node.js Game Server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardojunio/gameserver.git"
+  },
+  "author": "Eduardo Júnio Santos Macêdo",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/eduardojunio/gameserver/issues"
+  },
+  "homepage": "https://github.com/eduardojunio/gameserver#readme",
+  "devDependencies": {
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb-base": "^11.1.2",
+    "eslint-plugin-import": "^2.2.0"
+  },
+  "dependencies": {}
+}

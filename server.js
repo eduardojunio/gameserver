@@ -1,20 +1,11 @@
+'use strict';
+
+const Server = require('./src/Server');
+
 const dgram = require('dgram');
-const server = dgram.createSocket('udp4');
+const socket = dgram.createSocket('udp4');
+const server = new Server({ socket });
 
-server.on('error', (err) => {
-  console.log(`server error:\n${err.stack}`);
-  server.close();
-});
+server.registerEventListeners();
 
-server.on('message', (msg, rinfo) => {
-  let obj = JSON.parse(msg);
-  console.log(`server got: ${msg} from ${rinfo.address}:${rinfo.port}`);
-});
-
-server.on('listening', () => {
-  var address = server.address();
-  console.log(`server listening ${address.address}:${address.port}`);
-});
-
-server.bind(41234);
-// server listening 0.0.0.0:41234
+server.startServer();
