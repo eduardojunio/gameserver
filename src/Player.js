@@ -1,17 +1,17 @@
-function Player({ coordinates, ipAddress, portNumber }) {
-  this.coordinates = coordinates;
-  this.ipAddress = ipAddress;
-  this.portNumber = portNumber;
-}
+class Player {
+  constructor({ coordinates, ipAddress, portNumber }) {
+    this.coordinates = coordinates;
+    this.ipAddress = ipAddress;
+    this.portNumber = portNumber;
+  }
 
-function updateCoordinates({ x, y }) {
-  this.coordinates = { x, y };
-}
-Player.prototype.updateCoordinates = updateCoordinates;
+  updateCoordinates({ x, y }) {
+    this.coordinates = { x, y };
+  }
 
-function getFullAddress() {
-  return `${this.ipAddress}:${this.portNumber}`;
+  getFullAddress() {
+    return `${this.ipAddress}:${this.portNumber}`;
+  }
 }
-Player.prototype.getFullAddress = getFullAddress;
 
 module.exports = Player;
